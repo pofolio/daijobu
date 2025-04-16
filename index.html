@@ -1,0 +1,292 @@
+<!-- 이자카야 소개 페이지 - 반응형 HTML 하나로 구성 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도심 속 이자카야</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --light-bg: #fffaf0;
+            --dark-bg: #1a1a1a;
+            --gray: #7f8c8d;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-bg);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu li a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-menu li a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            position: relative;
+            height: 90vh;
+            background: url('https://images.unsplash.com/photo-1617084463523-5ea0111ad12b') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero a {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .hero a:hover {
+            background: var(--primary-color);
+        }
+
+        .section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .gallery {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .gallery figure {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery figure:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .gallery figcaption {
+            padding: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .contact {
+            background: #f8f8f8;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+
+        button {
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--primary-color);
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">🍶 도심 속 이자카야</div>
+            <ul class="nav-menu">
+                <li><a href="#menu">메뉴</a></li>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#contact">문의</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>정통 이자카야의 분위기</h1>
+            <p>신선한 재료와 정성 가득한 요리, 일본의 밤을 담았습니다.</p>
+            <a href="#menu">메뉴 보기</a>
+        </div>
+    </section>
+
+    <main>
+        <section id="menu" class="section">
+            <h2 class="section-title">대표 메뉴</h2>
+            <div class="gallery">
+                <figure tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1604908554165-b2c8e9e57c91" alt="사시미 접시">
+                    <figcaption>신선한 사시미</figcaption>
+                </figure>
+                <figure tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1553621042-f6e147245754" alt="야키토리 꼬치">
+                    <figcaption>야키토리</figcaption>
+                </figure>
+                <figure tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b" alt="튀김 텐푸라">
+                    <figcaption>바삭한 텐푸라</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-title">이자카야 소개</h2>
+            <p style="text-align:center; max-width:700px; margin:auto;">
+                이자카야는 일본식 선술집으로, 맛있는 안주와 함께 따뜻한 분위기를 즐길 수 있는 공간입니다. 저희 가게는 전통적인 일본 감성을 담은 인테리어와 정성 가득한 요리로
+                손님을 맞이합니다.
+            </p>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2 class="section-title">문의하기</h2>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="이름" required>
+                <input type="email" name="email" placeholder="이메일" required>
+                <textarea name="message" rows="5" placeholder="메시지를 입력해주세요" required></textarea>
+                <button type="submit">보내기</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 도심 속 이자카야 | 서울특별시 어딘가 | 02-1234-5678
+    </footer>
+
+</body>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = this.name.value;
+        alert(name + '님, 문의가 접수되었습니다! 빠른 시일 내 답변드리겠습니다.');
+        this.reset();
+    });
+</script>
+
+</html>
