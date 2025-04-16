@@ -1,292 +1,286 @@
-<!-- 이자카야 소개 페이지 - 반응형 HTML 하나로 구성 -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>도심 속 이자카야</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #e67e22;
-            --light-bg: #fffaf0;
-            --dark-bg: #1a1a1a;
-            --gray: #7f8c8d;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--dark-bg);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        header {
-            background: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-menu li a {
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-menu li a:hover {
-            color: var(--accent-color);
-        }
-
-        .hero {
-            position: relative;
-            height: 90vh;
-            background: url('https://images.unsplash.com/photo-1617084463523-5ea0111ad12b') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero a {
-            background: var(--accent-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            transition: var(--transition);
-        }
-
-        .hero a:hover {
-            background: var(--primary-color);
-        }
-
-        .section {
-            padding: 4rem 5%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .gallery {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .gallery figure {
-            background: white;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .gallery figure:hover {
-            transform: scale(1.03);
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .gallery figcaption {
-            padding: 1rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .contact {
-            background: #f8f8f8;
-        }
-
-        .contact form {
-            max-width: 500px;
-            margin: auto;
-            display: grid;
-            gap: 1rem;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-        }
-
-        button {
-            background: var(--accent-color);
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: var(--primary-color);
-        }
-
-        footer {
-            background: var(--dark-bg);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 이자카야 - 정통 일본식 주점</title>
+    <meta name="description" content="한국 최고의 이자카야를 소개합니다. 정통 일본식 안주와 술을 즐겨보세요.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 
 <body>
-
     <header>
-        <nav class="navbar">
-            <div class="logo">🍶 도심 속 이자카야</div>
-            <ul class="nav-menu">
-                <li><a href="#menu">메뉴</a></li>
-                <li><a href="#about">소개</a></li>
-                <li><a href="#contact">문의</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="/" aria-label="홈으로 이동">
+                    <h1>한국 이자카야</h1>
+                </a>
+            </div>
+            <nav>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="main-menu">
+                    <span class="sr-only">메뉴</span>
+                    <span class="menu-icon"></span>
+                </button>
+                <ul id="main-menu" class="main-menu">
+                    <li><a href="#about">소개</a></li>
+                    <li><a href="#featured">추천 메뉴</a></li>
+                    <li><a href="#restaurants">맛집 리스트</a></li>
+                    <li><a href="#culture">이자카야 문화</a></li>
+                    <li><a href="#contact">문의하기</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>정통 이자카야의 분위기</h1>
-            <p>신선한 재료와 정성 가득한 요리, 일본의 밤을 담았습니다.</p>
-            <a href="#menu">메뉴 보기</a>
-        </div>
-    </section>
-
     <main>
-        <section id="menu" class="section">
-            <h2 class="section-title">대표 메뉴</h2>
-            <div class="gallery">
-                <figure tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1604908554165-b2c8e9e57c91" alt="사시미 접시">
-                    <figcaption>신선한 사시미</figcaption>
-                </figure>
-                <figure tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1553621042-f6e147245754" alt="야키토리 꼬치">
-                    <figcaption>야키토리</figcaption>
-                </figure>
-                <figure tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b" alt="튀김 텐푸라">
-                    <figcaption>바삭한 텐푸라</figcaption>
-                </figure>
+        <!-- 히어로 섹션 -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">진정한 이자카야 경험</h2>
+                    <p class="hero-subtitle">한국 최고의 이자카야에서 정통 일본식 안주와 함께하는 특별한 시간</p>
+                    <a href="#featured" class="btn primary-btn">추천 메뉴 보기</a>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- 소개 섹션 -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">이자카야란?</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>이자카야(居酒屋)는 일본의 전통적인 술집으로, 다양한 안주와 함께 술을 즐기는 문화적 공간입니다. 한국에서도 정통 일본식 이자카야부터 한국적 감성을 더한 퓨전
+                            이자카야까지 다양한 형태로 사랑받고 있습니다.</p>
+                        <p>이자카야의 매력은 아늑한 분위기와 함께 즐기는 다양한 요리에 있습니다. 숙련된 셰프들이 만드는 신선한 사시미부터 따뜻한 오뎅, 바삭한 가라아게까지 다양한 메뉴를
+                            한자리에서 즐길 수 있습니다.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="/api/placeholder/500/350" alt="이자카야 내부 분위기" loading="lazy">
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="section">
-            <h2 class="section-title">이자카야 소개</h2>
-            <p style="text-align:center; max-width:700px; margin:auto;">
-                이자카야는 일본식 선술집으로, 맛있는 안주와 함께 따뜻한 분위기를 즐길 수 있는 공간입니다. 저희 가게는 전통적인 일본 감성을 담은 인테리어와 정성 가득한 요리로
-                손님을 맞이합니다.
-            </p>
+        <!-- 추천 메뉴 섹션 -->
+        <section id="featured" class="featured">
+            <div class="container">
+                <h2 class="section-title">인기 이자카야 메뉴</h2>
+                <div class="food-slider">
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="/api/placeholder/400/300" alt="모둠 사시미" loading="lazy">
+                        </div>
+                        <div class="food-info">
+                            <h3>모둠 사시미</h3>
+                            <p>신선한 해산물로 준비한 생선회 모둠</p>
+                            <div class="tags">
+                                <span class="tag">생선회</span>
+                                <span class="tag">인기메뉴</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="/api/placeholder/400/300" alt="가라아게" loading="lazy">
+                        </div>
+                        <div class="food-info">
+                            <h3>가라아게</h3>
+                            <p>바삭한 일본식 닭튀김</p>
+                            <div class="tags">
+                                <span class="tag">튀김요리</span>
+                                <span class="tag">베스트셀러</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="/api/placeholder/400/300" alt="타코야끼" loading="lazy">
+                        </div>
+                        <div class="food-info">
+                            <h3>타코야끼</h3>
+                            <p>문어가 들어간 일본식 구운 전</p>
+                            <div class="tags">
+                                <span class="tag">구이요리</span>
+                                <span class="tag">추천메뉴</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="/api/placeholder/400/300" alt="오뎅탕" loading="lazy">
+                        </div>
+                        <div class="food-info">
+                            <h3>오뎅탕</h3>
+                            <p>다시마와 가츠오부시 국물에 끓인 어묵탕</p>
+                            <div class="tags">
+                                <span class="tag">국물요리</span>
+                                <span class="tag">겨울메뉴</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button id="prevSlide" class="slider-btn" aria-label="이전 슬라이드">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots"></div>
+                    <button id="nextSlide" class="slider-btn" aria-label="다음 슬라이드">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="cta-container">
+                    <a href="#restaurants" class="btn secondary-btn">모든 맛집 보기</a>
+                </div>
+            </div>
         </section>
 
-        <section id="contact" class="section contact">
-            <h2 class="section-title">문의하기</h2>
-            <form id="contactForm">
-                <input type="text" name="name" placeholder="이름" required>
-                <input type="email" name="email" placeholder="이메일" required>
-                <textarea name="message" rows="5" placeholder="메시지를 입력해주세요" required></textarea>
-                <button type="submit">보내기</button>
-            </form>
+        <!-- 맛집 리스트 프리뷰 -->
+        <section id="restaurants" class="restaurants-preview">
+            <div class="container">
+                <h2 class="section-title">한국 최고의 이자카야</h2>
+                <div class="restaurant-grid">
+                    <article class="restaurant-card">
+                        <div class="restaurant-image">
+                            <img src="/api/placeholder/400/300" alt="이자카야 가게 전경" loading="lazy">
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>사케야</h3>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>서울 강남구</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.5/5</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="restaurant-card">
+                        <div class="restaurant-image">
+                            <img src="/api/placeholder/400/300" alt="이자카야 실내" loading="lazy">
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>이자카야 욘도메</h3>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>서울 마포구</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>4.0/5</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="restaurant-card">
+                        <div class="restaurant-image">
+                            <img src="/api/placeholder/400/300" alt="이자카야 음식" loading="lazy">
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>쿠시야</h3>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>부산 해운대구</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0/5</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA 섹션 -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>나만의 이자카야 경험을 공유해보세요</h2>
+                    <p>좋아하는 이자카야나 메뉴를 추천하고 싶으신가요?</p>
+                    <a href="#contact" class="btn primary-btn">리뷰 작성하기</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 뉴스레터 구독 -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>최신 이자카야 소식 받기</h2>
+                    <p>새로운 맛집 정보와 이벤트 소식을 이메일로 받아보세요.</p>
+                    <form class="newsletter-form" aria-label="뉴스레터 구독 양식">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">이메일 주소</label>
+                            <input type="email" id="email" name="email" placeholder="이메일 주소" required>
+                        </div>
+                        <button type="submit" class="btn primary-btn">구독하기</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        &copy; 2025 도심 속 이자카야 | 서울특별시 어딘가 | 02-1234-5678
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>한국 이자카야</h2>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>사이트 맵</h3>
+                        <ul>
+                            <li><a href="#about">소개</a></li>
+                            <li><a href="#featured">추천 메뉴</a></li>
+                            <li><a href="#restaurants">맛집 리스트</a></li>
+                            <li><a href="#culture">이자카야 문화</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>고객 지원</h3>
+                        <ul>
+                            <li><a href="#contact">문의하기</a></li>
+                            <li><a href="#">자주 묻는 질문</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>소셜 미디어</h3>
+                        <div class="social-links">
+                            <a href="#" aria-label="인스타그램"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="페이스북"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="유튜브"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 한국 이자카야 가이드. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const name = this.name.value;
-        alert(name + '님, 문의가 접수되었습니다! 빠른 시일 내 답변드리겠습니다.');
-        this.reset();
-    });
-</script>
 
 </html>
