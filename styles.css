@@ -399,7 +399,7 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .filter-btn {
@@ -437,6 +437,7 @@ section {
 
 .about-text p {
     margin-bottom: var(--spacing-md);
+    color: var(--text-color);
 }
 
 .about-image {
@@ -456,10 +457,15 @@ section {
     width: 100%;
     display: flex;
     transition: var(--transition);
+    height: 450px;
+    /* 슬라이더 높이 명시적 설정 */
 }
 
 .food-card {
-    min-width: 100%;
+    position: absolute;
+    /* 포지션 변경 */
+    width: 100%;
+    /* 너비 설정 */
     display: flex;
     flex-direction: column;
     background-color: var(--dark-color);
@@ -467,13 +473,17 @@ section {
     overflow: hidden;
     box-shadow: var(--shadow);
     opacity: 0;
-    transform: scale(0.9);
-    transition: var(--transition);
+    transform: translateX(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    left: 0;
+    /* 위치 지정 */
+    top: 0;
+    /* 위치 지정 */
 }
 
 .food-card.active {
     opacity: 1;
-    transform: scale(1);
+    z-index: 1;
 }
 
 .food-image {
