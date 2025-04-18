@@ -223,7 +223,7 @@ header {
 .hero {
     height: 80vh;
     min-height: 500px;
-    background-image: url(images/dish_2.jpeg);
+    background-image: url(images/main_1.jpeg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -271,6 +271,7 @@ header {
 .hero-buttons {
     display: flex;
     gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
 
 /* 섹션 공통 스타일 */
@@ -316,7 +317,7 @@ section {
 
 .card-menu-item {
     perspective: 1000px;
-    height: 300px;
+    height: 150px;
     cursor: pointer;
 }
 
@@ -894,7 +895,11 @@ footer {
     }
 
     .info-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .info-card>p {
+        font-size: 0.8em;
     }
 }
 
@@ -1025,6 +1030,6 @@ footer {
 
 @media (max-width: 480px) {
     .instagram-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
