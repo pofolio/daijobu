@@ -4,23 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이자카야 사케야 - 정통 일본식 주점</title>
-    <meta name="description" content="서울 강남에 위치한 정통 이자카야 사케야. 신선한 일본식 안주와 다양한 일본 술을 즐겨보세요.">
+    <title>다이조부 - 프리미엄 일본식 이자카야</title>
+    <meta name="description" content="서울 강남에 위치한 프리미엄 이자카야 다이조부. 신선한 일본식 안주와 엄선된 일본 술을 즐겨보세요.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 
 <body>
+    <div class="menu-backdrop"></div>
     <header>
-        
         <div class="container header-container">
             <div class="logo">
                 <a href="/" aria-label="홈으로 이동">
-                    <h1>이자카야 사케야</h1>
+                    <h1>大丈夫</h1>
+                    <span class="logo-text">다이조부</span>
                 </a>
             </div>
             <nav>
@@ -29,7 +31,7 @@
                     <span class="menu-icon"></span>
                 </button>
                 <ul id="main-menu" class="main-menu">
-                    <li><a href="#food-feed">메뉴 갤러리</a></li>
+                    <li><a href="#card-menu">메뉴판</a></li>
                     <li><a href="#about">소개</a></li>
                     <li><a href="#featured">대표 메뉴</a></li>
                     <li><a href="#info">매장 정보</a></li>
@@ -44,10 +46,11 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2 class="hero-title">이자카야 사케야</h2>
-                    <p class="hero-subtitle">강남에서 즐기는 정통 일본식 안주와 함께하는 특별한 시간</p>
+                    <div class="japanese-title">大丈夫</div>
+                    <h2 class="hero-title">다이조부</h2>
+                    <p class="hero-subtitle">강남에서 즐기는 프리미엄 이자카야 경험</p>
                     <div class="hero-buttons">
-                        <a href="#food-feed" class="btn primary-btn">메뉴 보기</a>
+                        <a href="#card-menu" class="btn primary-btn">메뉴 보기</a>
                         <a href="#info" class="btn secondary-btn">예약 정보</a>
                     </div>
                 </div>
@@ -55,83 +58,142 @@
             <div class="hero-overlay"></div>
         </section>
 
-        <!-- 음식 피드 갤러리 -->
-        <section id="food-feed" class="food-feed">
+        <!-- 카드 메뉴 인터랙션 섹션 -->
+        <section id="card-menu" class="card-menu-section">
             <div class="container">
-                <h2 class="section-title">사케야의 인기 메뉴</h2>
-                <div class="feed-grid">
-                    <div class="feed-item">
-                        <div class="feed-image">
-                            <img src="/api/placeholder/500/500" alt="참치 사시미" loading="lazy">
+                <h2 class="section-title">메뉴판</h2>
+                <div class="card-menu-container">
+                    <div class="card-menu" id="cardMenu">
+                        <div class="card-menu-item" data-category="사시미">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="images/dish_1.jpeg" alt="참치 사시미">
+                                    <div class="card-overlay">
+                                        <h3>참치 사시미</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>참치 사시미</h3>
+                                    <p>매일 공수되는 신선한 참치로 만든 프리미엄 사시미</p>
+                                    <div class="price">32,000원</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="feed-overlay">
-                            <h3>참치 사시미</h3>
-                            <p>매일 공수되는 신선한 참치로 만든 사시미</p>
+                        <div class="card-menu-item" data-category="주류">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="images/dish_2.jpeg" alt="모둠 사케">
+                                    <div class="card-overlay">
+                                        <h3>모둠 사케</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>모둠 사케</h3>
+                                    <p>엄선된 일본 각 지역의 명주를 한번에 맛볼 수 있는 세트</p>
+                                    <div class="price">36,000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-menu-item" data-category="튀김">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="images/dish_3.jpeg" alt="가라아게">
+                                    <div class="card-overlay">
+                                        <h3>가라아게</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>가라아게</h3>
+                                    <p>바삭하고 촉촉한 일본식 닭튀김, 수제 와사비 마요네즈 소스 제공</p>
+                                    <div class="price">18,000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-menu-item" data-category="구이">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="images/dish_4.jpeg" alt="타코야끼">
+                                    <div class="card-overlay">
+                                        <h3>타코야끼</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>타코야끼</h3>
+                                    <p>신선한 문어가 들어간 일본식 구운 전, 가쓰오부시 토핑</p>
+                                    <div class="price">16,000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-menu-item" data-category="국물">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="images/dish_5.jpeg" alt="오뎅탕">
+                                    <div class="card-overlay">
+                                        <h3>오뎅탕</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>오뎅탕</h3>
+                                    <p>다시마와 가츠오부시로 우려낸 깊은 맛의 육수에 어울리는 특선 어묵</p>
+                                    <div class="price">18,000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-menu-item" data-category="사시미">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="images/dish_6.jpeg" alt="연어 사시미">
+                                    <div class="card-overlay">
+                                        <h3>연어 사시미</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>연어 사시미</h3>
+                                    <p>노르웨이산 프리미엄 연어를 사용한 싱싱한 사시미</p>
+                                    <div class="price">28,000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-menu-item" data-category="구이">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="images/dish_7.jpeg" alt="모둠 꼬치구이">
+                                    <div class="card-overlay">
+                                        <h3>모둠 꼬치구이</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>모둠 꼬치구이</h3>
+                                    <p>닭, 돼지고기, 야채 등 셰프 특선 모둠 꼬치구이</p>
+                                    <div class="price">24,000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-menu-item" data-category="초밥">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="images/dish_8.jpeg" alt="우니 초밥">
+                                    <div class="card-overlay">
+                                        <h3>우니 초밥</h3>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>우니 초밥</h3>
+                                    <p>제철 성게알을 사용한 프리미엄 초밥</p>
+                                    <div class="price">38,000원</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="feed-item">
-                        <div class="feed-image">
-                            <img src="/api/placeholder/500/500" alt="모둠 사케" loading="lazy">
-                        </div>
-                        <div class="feed-overlay">
-                            <h3>모둠 사케</h3>
-                            <p>다양한 종류의 일본 정종을 한번에</p>
-                        </div>
-                    </div>
-                    <div class="feed-item">
-                        <div class="feed-image">
-                            <img src="/api/placeholder/500/500" alt="가라아게" loading="lazy">
-                        </div>
-                        <div class="feed-overlay">
-                            <h3>가라아게</h3>
-                            <p>바삭하고 촉촉한 일본식 닭튀김</p>
-                        </div>
-                    </div>
-                    <div class="feed-item">
-                        <div class="feed-image">
-                            <img src="/api/placeholder/500/500" alt="타코야끼" loading="lazy">
-                        </div>
-                        <div class="feed-overlay">
-                            <h3>타코야끼</h3>
-                            <p>신선한 문어가 들어간 일본식 구운 전</p>
-                        </div>
-                    </div>
-                    <div class="feed-item">
-                        <div class="feed-image">
-                            <img src="/api/placeholder/500/500" alt="오뎅탕" loading="lazy">
-                        </div>
-                        <div class="feed-overlay">
-                            <h3>오뎅탕</h3>
-                            <p>깊은 맛의 육수에 어울리는 어묵 요리</p>
-                        </div>
-                    </div>
-                    <div class="feed-item">
-                        <div class="feed-image">
-                            <img src="/api/placeholder/500/500" alt="연어 사시미" loading="lazy">
-                        </div>
-                        <div class="feed-overlay">
-                            <h3>연어 사시미</h3>
-                            <p>노르웨이산 신선한 연어 사시미</p>
-                        </div>
-                    </div>
-                    <div class="feed-item">
-                        <div class="feed-image">
-                            <img src="/api/placeholder/500/500" alt="모둠 꼬치구이" loading="lazy">
-                        </div>
-                        <div class="feed-overlay">
-                            <h3>모둠 꼬치구이</h3>
-                            <p>다양한 종류의 야키토리 꼬치</p>
-                        </div>
-                    </div>
-                    <div class="feed-item">
-                        <div class="feed-image">
-                            <img src="/api/placeholder/500/500" alt="우니 초밥" loading="lazy">
-                        </div>
-                        <div class="feed-overlay">
-                            <h3>우니 초밥</h3>
-                            <p>신선한 성게알을 올린 특별 초밥</p>
-                        </div>
-                    </div>
+                </div>
+                <div class="category-filter">
+                    <button class="filter-btn active" data-filter="all">전체</button>
+                    <button class="filter-btn" data-filter="사시미">사시미</button>
+                    <button class="filter-btn" data-filter="구이">구이</button>
+                    <button class="filter-btn" data-filter="튀김">튀김</button>
+                    <button class="filter-btn" data-filter="국물">국물</button>
+                    <button class="filter-btn" data-filter="주류">주류</button>
+                    <button class="filter-btn" data-filter="초밥">초밥</button>
                 </div>
             </div>
         </section>
@@ -139,17 +201,17 @@
         <!-- 소개 섹션 -->
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title">이자카야 사케야 소개</h2>
+                <h2 class="section-title">다이조부 소개</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>'사케야'는 일본어로 '술집'이라는 뜻으로, 2018년 강남에 오픈한 이래로 정통 일본 이자카야 문화를 서울에 전하고 있습니다. 저희는 일본 현지의 맛과 분위기를
-                            그대로 재현하기 위해 음식 재료부터 인테리어까지 세심하게 신경 쓰고 있습니다.</p>
-                        <p>사케야의 모든 요리는 엄선된 신선한 재료로 만들어지며, 특히 사시미와 해산물 요리는 매일 공수되는 신선한 어류를 사용합니다. 또한 일본 전역에서 엄선한 50여 종의
-                            사케(일본 정종)와 다양한 일본 맥주를 즐기실 수 있습니다.</p>
+                        <p>'다이조부(大丈夫)'는 일본어로 '괜찮다', '문제없다'는 뜻으로, 2018년 강남에 오픈한 이래로 정통 일본 이자카야 문화를 서울에 전하고 있습니다. 저희는 최고의
+                            경험을 선사하기 위해 식재료 선정부터 분위기까지 세심하게 신경쓰고 있습니다.</p>
+                        <p>다이조부의 모든 요리는 엄선된 신선한 재료로 만들어지며, 특히 사시미와 해산물 요리는 매일 공수되는 신선한 어류를 사용합니다. 또한 일본 전역에서 엄선한 50여 종의
+                            사케(일본 정종)와 다양한 일본 프리미엄 맥주를 즐기실 수 있습니다.</p>
                         <p>오시는 모든 손님들께 특별한 경험을 선사하기 위해 최선을 다하겠습니다.</p>
                     </div>
                     <div class="about-image">
-                        <img src="/api/placeholder/500/350" alt="이자카야 사케야 내부 인테리어" loading="lazy">
+                        <img src="images/dish_9.jpeg" alt="다이조부 내부 인테리어">
                     </div>
                 </div>
             </div>
@@ -162,12 +224,12 @@
                 <div class="food-slider" id="foodSlider">
                     <div class="food-card">
                         <div class="food-image">
-                            <img src="/api/placeholder/400/300" alt="모둠 사시미" loading="lazy">
+                            <img src="images/dish_10.jpeg" alt="모둠 사시미">
                         </div>
                         <div class="food-info">
                             <h3>프리미엄 모둠 사시미</h3>
                             <p>참치, 연어, 광어, 도미 등 신선한 해산물 모둠</p>
-                            <div class="price">38,000원</div>
+                            <div class="price">42,000원</div>
                             <div class="tags">
                                 <span class="tag">생선회</span>
                                 <span class="tag">인기메뉴</span>
@@ -176,7 +238,7 @@
                     </div>
                     <div class="food-card">
                         <div class="food-image">
-                            <img src="/api/placeholder/400/300" alt="가라아게" loading="lazy">
+                            <img src="images/dish_11.jpeg" alt="가라아게">
                         </div>
                         <div class="food-info">
                             <h3>가라아게</h3>
@@ -190,12 +252,12 @@
                     </div>
                     <div class="food-card">
                         <div class="food-image">
-                            <img src="/api/placeholder/400/300" alt="타코야끼" loading="lazy">
+                            <img src="images/dish_12.jpeg" alt="타코야끼">
                         </div>
                         <div class="food-info">
                             <h3>타코야끼</h3>
                             <p>신선한 문어가 들어간 일본식 구운 전</p>
-                            <div class="price">15,000원</div>
+                            <div class="price">16,000원</div>
                             <div class="tags">
                                 <span class="tag">구이요리</span>
                                 <span class="tag">추천메뉴</span>
@@ -204,12 +266,12 @@
                     </div>
                     <div class="food-card">
                         <div class="food-image">
-                            <img src="/api/placeholder/400/300" alt="오뎅탕" loading="lazy">
+                            <img src="images/dish_13.jpeg" alt="오뎅탕">
                         </div>
                         <div class="food-info">
                             <h3>오뎅탕</h3>
                             <p>다시마와 가츠오부시 국물에 끓인 어묵탕</p>
-                            <div class="price">16,000원</div>
+                            <div class="price">18,000원</div>
                             <div class="tags">
                                 <span class="tag">국물요리</span>
                                 <span class="tag">겨울메뉴</span>
@@ -218,12 +280,12 @@
                     </div>
                     <div class="food-card">
                         <div class="food-image">
-                            <img src="/api/placeholder/400/300" alt="모둠 사케" loading="lazy">
+                            <img src="images/dish_14.jpeg" alt="모둠 사케">
                         </div>
                         <div class="food-info">
                             <h3>프리미엄 사케 세트</h3>
                             <p>지역별 3종 사케 시음 세트</p>
-                            <div class="price">32,000원</div>
+                            <div class="price">36,000원</div>
                             <div class="tags">
                                 <span class="tag">주류</span>
                                 <span class="tag">프리미엄</span>
@@ -232,12 +294,12 @@
                     </div>
                     <div class="food-card">
                         <div class="food-image">
-                            <img src="/api/placeholder/400/300" alt="모둠 꼬치구이" loading="lazy">
+                            <img src="images/dish_15.jpeg" alt="모둠 꼬치구이">
                         </div>
                         <div class="food-info">
                             <h3>모둠 꼬치구이</h3>
                             <p>닭, 돼지고기, 야채 등 다양한 꼬치 세트</p>
-                            <div class="price">22,000원</div>
+                            <div class="price">24,000원</div>
                             <div class="tags">
                                 <span class="tag">구이요리</span>
                                 <span class="tag">세트메뉴</span>
@@ -293,7 +355,7 @@
                 </div>
                 <div class="map-container">
                     <div class="map-placeholder">
-                        <img src="/api/placeholder/1200/400" alt="이자카야 사케야 지도" loading="lazy">
+                        <img src="images/dish_16.jpeg" alt="다이조부 지도">
                         <div class="map-overlay">
                             <a href="#" class="btn primary-btn">지도 보기</a>
                         </div>
@@ -306,7 +368,7 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>특별한 추억을 사케야에서 만들어보세요</h2>
+                    <h2>특별한 추억을 다이조부에서 만들어보세요</h2>
                     <p>친구, 연인, 가족과 함께 특별한 시간을 보내세요</p>
                     <a href="tel:02-123-4567" class="btn primary-btn">예약하기</a>
                 </div>
@@ -318,7 +380,7 @@
             <div class="container">
                 <div class="newsletter-content">
                     <h2>이벤트 소식 받기</h2>
-                    <p>사케야의 시즌 메뉴와 이벤트 소식을 가장 먼저 받아보세요.</p>
+                    <p>다이조부의 시즌 메뉴와 이벤트 소식을 가장 먼저 받아보세요.</p>
                     <form class="newsletter-form" aria-label="뉴스레터 구독 양식">
                         <div class="form-group">
                             <label for="email" class="sr-only">이메일 주소</label>
@@ -335,13 +397,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h2>이자카야 사케야</h2>
+                    <h2>大丈夫</h2>
+                    <p>다이조부</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h3>바로가기</h3>
                         <ul>
-                            <li><a href="#food-feed">메뉴 갤러리</a></li>
+                            <li><a href="#card-menu">메뉴판</a></li>
                             <li><a href="#about">소개</a></li>
                             <li><a href="#featured">대표 메뉴</a></li>
                             <li><a href="#info">매장 정보</a></li>
@@ -366,7 +429,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 이자카야 사케야. All rights reserved.</p>
+                <p>&copy; 2025 다이조부. All rights reserved.</p>
             </div>
         </div>
     </footer>
