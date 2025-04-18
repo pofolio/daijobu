@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국 이자카야 - 정통 일본식 주점</title>
-    <meta name="description" content="한국 최고의 이자카야를 소개합니다. 정통 일본식 안주와 술을 즐겨보세요.">
+    <title>이자카야 사케야 - 정통 일본식 주점</title>
+    <meta name="description" content="서울 강남에 위치한 정통 이자카야 사케야. 신선한 일본식 안주와 다양한 일본 술을 즐겨보세요.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,11 @@
 
 <body>
     <header>
+        
         <div class="container header-container">
             <div class="logo">
                 <a href="/" aria-label="홈으로 이동">
-                    <h1>한국 이자카야</h1>
+                    <h1>이자카야 사케야</h1>
                 </a>
             </div>
             <nav>
@@ -28,10 +29,10 @@
                     <span class="menu-icon"></span>
                 </button>
                 <ul id="main-menu" class="main-menu">
+                    <li><a href="#food-feed">메뉴 갤러리</a></li>
                     <li><a href="#about">소개</a></li>
-                    <li><a href="#featured">추천 메뉴</a></li>
-                    <li><a href="#restaurants">맛집 리스트</a></li>
-                    <li><a href="#culture">이자카야 문화</a></li>
+                    <li><a href="#featured">대표 메뉴</a></li>
+                    <li><a href="#info">매장 정보</a></li>
                     <li><a href="#contact">문의하기</a></li>
                 </ul>
             </nav>
@@ -43,44 +44,130 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2 class="hero-title">진정한 이자카야 경험</h2>
-                    <p class="hero-subtitle">한국 최고의 이자카야에서 정통 일본식 안주와 함께하는 특별한 시간</p>
-                    <a href="#featured" class="btn primary-btn">추천 메뉴 보기</a>
+                    <h2 class="hero-title">이자카야 사케야</h2>
+                    <p class="hero-subtitle">강남에서 즐기는 정통 일본식 안주와 함께하는 특별한 시간</p>
+                    <div class="hero-buttons">
+                        <a href="#food-feed" class="btn primary-btn">메뉴 보기</a>
+                        <a href="#info" class="btn secondary-btn">예약 정보</a>
+                    </div>
                 </div>
             </div>
             <div class="hero-overlay"></div>
         </section>
 
-        <!-- 소개 섹션 -->
-        <section id="about" class="about">
+        <!-- 음식 피드 갤러리 -->
+        <section id="food-feed" class="food-feed">
             <div class="container">
-                <h2 class="section-title">이자카야란?</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>이자카야(居酒屋)는 일본의 전통적인 술집으로, 다양한 안주와 함께 술을 즐기는 문화적 공간입니다. 한국에서도 정통 일본식 이자카야부터 한국적 감성을 더한 퓨전
-                            이자카야까지 다양한 형태로 사랑받고 있습니다.</p>
-                        <p>이자카야의 매력은 아늑한 분위기와 함께 즐기는 다양한 요리에 있습니다. 숙련된 셰프들이 만드는 신선한 사시미부터 따뜻한 오뎅, 바삭한 가라아게까지 다양한 메뉴를
-                            한자리에서 즐길 수 있습니다.</p>
+                <h2 class="section-title">사케야의 인기 메뉴</h2>
+                <div class="feed-grid">
+                    <div class="feed-item">
+                        <div class="feed-image">
+                            <img src="/api/placeholder/500/500" alt="참치 사시미" loading="lazy">
+                        </div>
+                        <div class="feed-overlay">
+                            <h3>참치 사시미</h3>
+                            <p>매일 공수되는 신선한 참치로 만든 사시미</p>
+                        </div>
                     </div>
-                    <div class="about-image">
-                        <img src="/api/placeholder/500/350" alt="이자카야 내부 분위기" loading="lazy">
+                    <div class="feed-item">
+                        <div class="feed-image">
+                            <img src="/api/placeholder/500/500" alt="모둠 사케" loading="lazy">
+                        </div>
+                        <div class="feed-overlay">
+                            <h3>모둠 사케</h3>
+                            <p>다양한 종류의 일본 정종을 한번에</p>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-image">
+                            <img src="/api/placeholder/500/500" alt="가라아게" loading="lazy">
+                        </div>
+                        <div class="feed-overlay">
+                            <h3>가라아게</h3>
+                            <p>바삭하고 촉촉한 일본식 닭튀김</p>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-image">
+                            <img src="/api/placeholder/500/500" alt="타코야끼" loading="lazy">
+                        </div>
+                        <div class="feed-overlay">
+                            <h3>타코야끼</h3>
+                            <p>신선한 문어가 들어간 일본식 구운 전</p>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-image">
+                            <img src="/api/placeholder/500/500" alt="오뎅탕" loading="lazy">
+                        </div>
+                        <div class="feed-overlay">
+                            <h3>오뎅탕</h3>
+                            <p>깊은 맛의 육수에 어울리는 어묵 요리</p>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-image">
+                            <img src="/api/placeholder/500/500" alt="연어 사시미" loading="lazy">
+                        </div>
+                        <div class="feed-overlay">
+                            <h3>연어 사시미</h3>
+                            <p>노르웨이산 신선한 연어 사시미</p>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-image">
+                            <img src="/api/placeholder/500/500" alt="모둠 꼬치구이" loading="lazy">
+                        </div>
+                        <div class="feed-overlay">
+                            <h3>모둠 꼬치구이</h3>
+                            <p>다양한 종류의 야키토리 꼬치</p>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-image">
+                            <img src="/api/placeholder/500/500" alt="우니 초밥" loading="lazy">
+                        </div>
+                        <div class="feed-overlay">
+                            <h3>우니 초밥</h3>
+                            <p>신선한 성게알을 올린 특별 초밥</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 추천 메뉴 섹션 -->
+        <!-- 소개 섹션 -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">이자카야 사케야 소개</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>'사케야'는 일본어로 '술집'이라는 뜻으로, 2018년 강남에 오픈한 이래로 정통 일본 이자카야 문화를 서울에 전하고 있습니다. 저희는 일본 현지의 맛과 분위기를
+                            그대로 재현하기 위해 음식 재료부터 인테리어까지 세심하게 신경 쓰고 있습니다.</p>
+                        <p>사케야의 모든 요리는 엄선된 신선한 재료로 만들어지며, 특히 사시미와 해산물 요리는 매일 공수되는 신선한 어류를 사용합니다. 또한 일본 전역에서 엄선한 50여 종의
+                            사케(일본 정종)와 다양한 일본 맥주를 즐기실 수 있습니다.</p>
+                        <p>오시는 모든 손님들께 특별한 경험을 선사하기 위해 최선을 다하겠습니다.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="/api/placeholder/500/350" alt="이자카야 사케야 내부 인테리어" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 대표 메뉴 섹션 -->
         <section id="featured" class="featured">
             <div class="container">
-                <h2 class="section-title">인기 이자카야 메뉴</h2>
-                <div class="food-slider">
+                <h2 class="section-title">대표 메뉴</h2>
+                <div class="food-slider" id="foodSlider">
                     <div class="food-card">
                         <div class="food-image">
                             <img src="/api/placeholder/400/300" alt="모둠 사시미" loading="lazy">
                         </div>
                         <div class="food-info">
-                            <h3>모둠 사시미</h3>
-                            <p>신선한 해산물로 준비한 생선회 모둠</p>
+                            <h3>프리미엄 모둠 사시미</h3>
+                            <p>참치, 연어, 광어, 도미 등 신선한 해산물 모둠</p>
+                            <div class="price">38,000원</div>
                             <div class="tags">
                                 <span class="tag">생선회</span>
                                 <span class="tag">인기메뉴</span>
@@ -93,7 +180,8 @@
                         </div>
                         <div class="food-info">
                             <h3>가라아게</h3>
-                            <p>바삭한 일본식 닭튀김</p>
+                            <p>바삭한 일본식 닭튀김, 특제 소스 제공</p>
+                            <div class="price">18,000원</div>
                             <div class="tags">
                                 <span class="tag">튀김요리</span>
                                 <span class="tag">베스트셀러</span>
@@ -106,7 +194,8 @@
                         </div>
                         <div class="food-info">
                             <h3>타코야끼</h3>
-                            <p>문어가 들어간 일본식 구운 전</p>
+                            <p>신선한 문어가 들어간 일본식 구운 전</p>
+                            <div class="price">15,000원</div>
                             <div class="tags">
                                 <span class="tag">구이요리</span>
                                 <span class="tag">추천메뉴</span>
@@ -120,9 +209,38 @@
                         <div class="food-info">
                             <h3>오뎅탕</h3>
                             <p>다시마와 가츠오부시 국물에 끓인 어묵탕</p>
+                            <div class="price">16,000원</div>
                             <div class="tags">
                                 <span class="tag">국물요리</span>
                                 <span class="tag">겨울메뉴</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="/api/placeholder/400/300" alt="모둠 사케" loading="lazy">
+                        </div>
+                        <div class="food-info">
+                            <h3>프리미엄 사케 세트</h3>
+                            <p>지역별 3종 사케 시음 세트</p>
+                            <div class="price">32,000원</div>
+                            <div class="tags">
+                                <span class="tag">주류</span>
+                                <span class="tag">프리미엄</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="/api/placeholder/400/300" alt="모둠 꼬치구이" loading="lazy">
+                        </div>
+                        <div class="food-info">
+                            <h3>모둠 꼬치구이</h3>
+                            <p>닭, 돼지고기, 야채 등 다양한 꼬치 세트</p>
+                            <div class="price">22,000원</div>
+                            <div class="tags">
+                                <span class="tag">구이요리</span>
+                                <span class="tag">세트메뉴</span>
                             </div>
                         </div>
                     </div>
@@ -131,82 +249,55 @@
                     <button id="prevSlide" class="slider-btn" aria-label="이전 슬라이드">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <div class="slider-dots"></div>
+                    <div class="slider-dots" id="sliderDots"></div>
                     <button id="nextSlide" class="slider-btn" aria-label="다음 슬라이드">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
-                <div class="cta-container">
-                    <a href="#restaurants" class="btn secondary-btn">모든 맛집 보기</a>
-                </div>
             </div>
         </section>
 
-        <!-- 맛집 리스트 프리뷰 -->
-        <section id="restaurants" class="restaurants-preview">
+        <!-- 매장 정보 섹션 -->
+        <section id="info" class="info-section">
             <div class="container">
-                <h2 class="section-title">한국 최고의 이자카야</h2>
-                <div class="restaurant-grid">
-                    <article class="restaurant-card">
-                        <div class="restaurant-image">
-                            <img src="/api/placeholder/400/300" alt="이자카야 가게 전경" loading="lazy">
+                <h2 class="section-title">매장 정보</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="restaurant-info">
-                            <h3>사케야</h3>
-                            <div class="location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>서울 강남구</span>
-                            </div>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>4.5/5</span>
-                            </div>
+                        <h3>위치</h3>
+                        <p>서울특별시 강남구 테헤란로 123<br>OO빌딩 2층</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
                         </div>
-                    </article>
-                    <article class="restaurant-card">
-                        <div class="restaurant-image">
-                            <img src="/api/placeholder/400/300" alt="이자카야 실내" loading="lazy">
+                        <h3>영업시간</h3>
+                        <p>월-금: 17:00 - 24:00<br>토-일: 16:00 - 24:00</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="restaurant-info">
-                            <h3>이자카야 욘도메</h3>
-                            <div class="location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>서울 마포구</span>
-                            </div>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>4.0/5</span>
-                            </div>
+                        <h3>연락처</h3>
+                        <p>02-123-4567<br>예약 및 문의</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-parking"></i>
                         </div>
-                    </article>
-                    <article class="restaurant-card">
-                        <div class="restaurant-image">
-                            <img src="/api/placeholder/400/300" alt="이자카야 음식" loading="lazy">
+                        <h3>주차</h3>
+                        <p>건물 내 지하주차장<br>2시간 무료 주차</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <img src="/api/placeholder/1200/400" alt="이자카야 사케야 지도" loading="lazy">
+                        <div class="map-overlay">
+                            <a href="#" class="btn primary-btn">지도 보기</a>
                         </div>
-                        <div class="restaurant-info">
-                            <h3>쿠시야</h3>
-                            <div class="location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>부산 해운대구</span>
-                            </div>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>5.0/5</span>
-                            </div>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -215,19 +306,19 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>나만의 이자카야 경험을 공유해보세요</h2>
-                    <p>좋아하는 이자카야나 메뉴를 추천하고 싶으신가요?</p>
-                    <a href="#contact" class="btn primary-btn">리뷰 작성하기</a>
+                    <h2>특별한 추억을 사케야에서 만들어보세요</h2>
+                    <p>친구, 연인, 가족과 함께 특별한 시간을 보내세요</p>
+                    <a href="tel:02-123-4567" class="btn primary-btn">예약하기</a>
                 </div>
             </div>
         </section>
 
         <!-- 뉴스레터 구독 -->
-        <section class="newsletter">
+        <section id="contact" class="newsletter">
             <div class="container">
                 <div class="newsletter-content">
-                    <h2>최신 이자카야 소식 받기</h2>
-                    <p>새로운 맛집 정보와 이벤트 소식을 이메일로 받아보세요.</p>
+                    <h2>이벤트 소식 받기</h2>
+                    <p>사케야의 시즌 메뉴와 이벤트 소식을 가장 먼저 받아보세요.</p>
                     <form class="newsletter-form" aria-label="뉴스레터 구독 양식">
                         <div class="form-group">
                             <label for="email" class="sr-only">이메일 주소</label>
@@ -244,16 +335,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h2>한국 이자카야</h2>
+                    <h2>이자카야 사케야</h2>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h3>사이트 맵</h3>
+                        <h3>바로가기</h3>
                         <ul>
+                            <li><a href="#food-feed">메뉴 갤러리</a></li>
                             <li><a href="#about">소개</a></li>
-                            <li><a href="#featured">추천 메뉴</a></li>
-                            <li><a href="#restaurants">맛집 리스트</a></li>
-                            <li><a href="#culture">이자카야 문화</a></li>
+                            <li><a href="#featured">대표 메뉴</a></li>
+                            <li><a href="#info">매장 정보</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -269,13 +360,13 @@
                         <div class="social-links">
                             <a href="#" aria-label="인스타그램"><i class="fab fa-instagram"></i></a>
                             <a href="#" aria-label="페이스북"><i class="fab fa-facebook"></i></a>
-                            <a href="#" aria-label="유튜브"><i class="fab fa-youtube"></i></a>
+                            <a href="#" aria-label="네이버 블로그"><i class="fas fa-bold"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 한국 이자카야 가이드. All rights reserved.</p>
+                <p>&copy; 2025 이자카야 사케야. All rights reserved.</p>
             </div>
         </div>
     </footer>

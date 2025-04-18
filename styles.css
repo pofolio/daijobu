@@ -194,7 +194,7 @@ header {
     position: relative;
     height: 80vh;
     min-height: 500px;
-    background-image: url('/api/placeholder/1920/1080');
+    background-image: url('images/dish_1.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -232,6 +232,12 @@ header {
     opacity: 0.9;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
 /* 섹션 공통 스타일 */
 section {
     padding: var(--spacing-xl) 0;
@@ -254,6 +260,70 @@ section {
     width: 60px;
     height: 3px;
     background-color: var(--primary-color);
+}
+
+/* 음식 피드 갤러리 */
+.food-feed {
+    background-color: #f9f9f9;
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+}
+
+.feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.feed-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+
+.feed-image {
+    width: 100%;
+    height: 100%;
+}
+
+.feed-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.feed-item:hover .feed-image img {
+    transform: scale(1.1);
+}
+
+.feed-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: var(--spacing-md);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.feed-item:hover .feed-overlay {
+    transform: translateY(0);
+}
+
+.feed-overlay h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.feed-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
 /* 소개 섹션 */
@@ -279,14 +349,13 @@ section {
     box-shadow: var(--shadow);
 }
 
-/* 추천 메뉴 섹션 */
+/* 대표 메뉴 섹션 */
 .featured {
     background-color: #f9f9f9;
 }
 
 .food-slider {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: var(--spacing-lg);
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -294,6 +363,7 @@ section {
 }
 
 .food-card {
+    flex: 0 0 calc(33.333% - var(--spacing-lg));
     background-color: white;
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -327,26 +397,33 @@ section {
 
 .food-info h3 {
     margin-bottom: var(--spacing-sm);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .food-info p {
+    margin-bottom: var(--spacing-sm);
     color: var(--text-light);
-    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
 }
 
 .tags {
     display: flex;
-    gap: 8px;
     flex-wrap: wrap;
+    gap: 0.3rem;
 }
 
 .tag {
-    background-color: #f8f9fa;
-    padding: 4px 10px;
-    border-radius: 30px;
+    background-color: #f1f1f1;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
     font-size: 0.8rem;
-    color: var(--secondary-color);
+    color: var(--text-light);
 }
 
 .slider-controls {
@@ -358,28 +435,27 @@ section {
 }
 
 .slider-btn {
+    background: white;
+    border: none;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background-color: white;
-    border: 1px solid #e1e1e1;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
 .slider-btn:hover {
     background-color: var(--primary-color);
     color: white;
-    border-color: var(--primary-color);
 }
 
 .slider-dots {
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .dot {
@@ -393,84 +469,80 @@ section {
 
 .dot.active {
     background-color: var(--primary-color);
-    transform: scale(1.2);
 }
 
-.cta-container {
-    text-align: center;
-    margin-top: var(--spacing-lg);
-}
-
-/* 맛집 리스트 프리뷰 */
-.restaurants-preview {
+/* 매장 정보 섹션 */
+.info-section {
     background-color: white;
 }
 
-.restaurant-grid {
+.info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
 }
 
-.restaurant-card {
-    background-color: white;
+.info-card {
+    text-align: center;
+    padding: var(--spacing-md);
     border-radius: var(--border-radius);
-    overflow: hidden;
+    background-color: #f9f9f9;
     box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
-.restaurant-card:hover {
+.info-card:hover {
     transform: translateY(-5px);
 }
 
-.restaurant-image {
-    height: 200px;
-    overflow: hidden;
+.info-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
 }
 
-.restaurant-image img {
+.info-card h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.map-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+}
+
+.map-placeholder {
+    position: relative;
+}
+
+.map-placeholder img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.restaurant-card:hover .restaurant-image img {
-    transform: scale(1.1);
-}
-
-.restaurant-info {
-    padding: var(--spacing-md);
-}
-
-.restaurant-info h3 {
-    margin-bottom: var(--spacing-sm);
-    font-size: 1.3rem;
-}
-
-.location,
-.rating {
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-top: var(--spacing-sm);
-    color: var(--text-light);
-    font-size: 0.9rem;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
 }
 
-.rating {
-    color: var(--accent-color);
-}
-
-.rating span {
-    color: var(--text-light);
-    margin-left: 5px;
+.map-container:hover .map-overlay {
+    opacity: 1;
 }
 
 /* CTA 섹션 */
 .cta-section {
-    background-image: url('/api/placeholder/1920/600');
+    background-image: url('images/dish_26.jpeg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -485,12 +557,11 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .cta-content {
     position: relative;
-    z-index: 2;
     padding: var(--spacing-xl) 0;
 }
 
@@ -500,16 +571,17 @@ section {
 }
 
 .cta-content p {
+    font-size: 1.2rem;
     margin-bottom: var(--spacing-lg);
-    font-size: 1.1rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* 뉴스레터 */
+/* 뉴스레터 섹션 */
 .newsletter {
-    background-color: #f9f9f9;
+    background-color: var(--secondary-color);
+    color: white;
     text-align: center;
 }
 
@@ -518,13 +590,13 @@ section {
     margin: 0 auto;
 }
 
-.newsletter-content h2 {
+.newsletter h2 {
     margin-bottom: var(--spacing-md);
 }
 
-.newsletter-content p {
+.newsletter p {
     margin-bottom: var(--spacing-lg);
-    color: var(--text-light);
+    opacity: 0.9;
 }
 
 .newsletter-form {
@@ -536,71 +608,73 @@ section {
 
 .form-group {
     flex: 1;
-    min-width: 250px;
+    min-width: 200px;
 }
 
 .newsletter-form input {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #ddd;
     border-radius: var(--border-radius);
-    font-family: inherit;
+    border: none;
     font-size: 1rem;
-}
-
-.newsletter-form input:focus {
-    outline: none;
-    border-color: var(--primary-color);
 }
 
 /* 푸터 */
 footer {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--dark-color);
+    color: #eee;
     padding: var(--spacing-xl) 0 var(--spacing-md);
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer-logo {
+    flex: 1;
+    min-width: 200px;
 }
 
 .footer-logo h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: var(--spacing-md);
+    color: white;
 }
 
 .footer-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
 }
 
 .footer-column h3 {
-    font-size: 1.2rem;
     margin-bottom: var(--spacing-md);
-    position: relative;
-    padding-bottom: 10px;
+    font-size: 1.1rem;
+    color: white;
 }
 
-.footer-column h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--primary-color);
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.footer-column ul li {
-    margin-bottom: var(--spacing-sm);
+.footer-column a {
+    color: #bbb;
+    transition: var(--transition);
 }
 
 .footer-column a:hover {
-    color: var(--primary-color);
+    color: white;
 }
 
 .social-links {
@@ -609,46 +683,30 @@ footer {
     font-size: 1.5rem;
 }
 
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
 .copyright {
     text-align: center;
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: #888;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
 }
 
-/* 반응형 디자인 */
-@media (max-width: 992px) {
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .food-slider {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-}
-
+/* 모바일 메뉴 스타일 */
 @media (max-width: 768px) {
-    header {
-        position: relative;
-    }
-
     .mobile-menu-toggle {
         display: block;
         z-index: 101;
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .menu-icon {
+        background-color: transparent;
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .menu-icon::before {
+        transform: rotate(45deg);
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .menu-icon::after {
+        transform: rotate(-45deg);
     }
 
     .main-menu {
@@ -662,244 +720,109 @@ footer {
         flex-direction: column;
         padding: 80px var(--spacing-lg) var(--spacing-lg);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
         z-index: 100;
+        transition: right 0.3s ease;
     }
 
     .main-menu.active {
         right: 0;
     }
 
-    .mobile-menu-toggle.active .menu-icon {
-        background-color: transparent;
+    .about-content {
+        grid-template-columns: 1fr;
     }
 
-    .mobile-menu-toggle.active .menu-icon::before {
-        transform: rotate(45deg);
+    .about-image {
+        order: -1;
     }
 
-    .mobile-menu-toggle.active .menu-icon::after {
-        transform: rotate(-45deg);
+    .food-card {
+        flex: 0 0 calc(100% - var(--spacing-lg));
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-}
-
-@media (max-width: 576px) {
-
-    .food-slider,
-    .restaurant-grid {
-        grid-template-columns: 1fr;
+    .hero-buttons {
+        flex-direction: column;
     }
 
-    .hero {
-        height: 60vh;
+    .hero-buttons .btn {
+        width: 100%;
     }
 
     .newsletter-form {
         flex-direction: column;
     }
 
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .cta-content h2 {
-        font-size: 1.8rem;
+    .newsletter-form button {
+        width: 100%;
     }
 }
 
-/* 웹 접근성 개선 */
-:focus {
-    outline: 3px solid rgba(231, 76, 60, 0.5);
-    outline-offset: 2px;
-}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .food-card {
+        flex: 0 0 calc(50% - var(--spacing-lg));
+    }
 
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+    .hero-title {
+        font-size: 2.8rem;
     }
 }
 
-/* 스크롤 애니메이션 */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 스크롤바 스타일링 */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--text-light);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
-}
-
-/* 식품 이미지 홀버 효과 */
-.food-image {
-    position: relative;
-}
-
-.food-image::after {
-    content: '자세히 보기';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(231, 76, 60, 0.8);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.food-card:hover .food-image::after {
-    opacity: 1;
-}
-
-/* 페이지 로딩 스켈레톤 효과 */
-.skeleton {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-    border-radius: var(--border-radius);
-}
-
-@keyframes loading {
-    0% {
-        background-position: 200% 0;
+/* 이미지 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    100% {
-        background-position: -200% 0;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* 다크 모드 지원 */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text-color: #f8f9fa;
-        --text-light: #adb5bd;
-        --light-color: #222;
-        --dark-color: #f8f9fa;
-    }
-
-    body {
-        background-color: #121212;
-    }
-
-    header,
-    .about,
-    .restaurant-card,
-    .food-card,
-    footer {
-        background-color: #1e1e1e;
-    }
-
-    .tag {
-        background-color: #2d2d2d;
-        color: #ddd;
-    }
-
-    .newsletter {
-        background-color: #181818;
-    }
-
-    .slider-btn {
-        background-color: #2d2d2d;
-        border-color: #3d3d3d;
-        color: #ddd;
-    }
-
-    .newsletter-form input {
-        background-color: #2d2d2d;
-        border-color: #3d3d3d;
-        color: #ddd;
-    }
-
-    .skeleton {
-        background: linear-gradient(90deg, #2d2d2d 25%, #3d3d3d 50%, #2d2d2d 75%);
-    }
+.feed-item,
+.food-card,
+.info-card {
+    animation: fadeIn 0.6s ease-out;
+    animation-fill-mode: both;
 }
 
-/* 이미지 레이지 로딩 지원 */
-img.lazy {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.feed-item:nth-child(2),
+.food-card:nth-child(2),
+.info-card:nth-child(2) {
+    animation-delay: 0.2s;
 }
 
-img.lazy.loaded {
-    opacity: 1;
+.feed-item:nth-child(3),
+.food-card:nth-child(3),
+.info-card:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
-/* 탭 포커스 스타일링 */
-button:focus-visible,
-a:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
+.feed-item:nth-child(4),
+.food-card:nth-child(4),
+.info-card:nth-child(4) {
+    animation-delay: 0.6s;
 }
 
-/* 모바일 메뉴 애니메이션 */
-.menu-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+.feed-item:nth-child(5),
+.food-card:nth-child(5) {
+    animation-delay: 0.8s;
 }
 
-.menu-backdrop.active {
-    opacity: 1;
-    visibility: visible;
+.feed-item:nth-child(6),
+.food-card:nth-child(6) {
+    animation-delay: 1s;
 }
 
-/* 접근성 스킵 링크 */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--primary-color);
-    color: white;
-    padding: 8px;
-    z-index: 100;
-    transition: top 0.3s ease;
+.feed-item:nth-child(7) {
+    animation-delay: 1.2s;
 }
 
-.skip-link:focus {
-    top: 0;
+.feed-item:nth-child(8) {
+    animation-delay: 1.4s;
 }
